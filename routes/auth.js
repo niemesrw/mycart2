@@ -19,8 +19,10 @@ router.get('/authorize', (req, res) => {
   const authUrl = new URL(`${KROGER_API_BASE}/connect/oauth2/authorize`);
   authUrl.searchParams.append('client_id', process.env.KROGER_CLIENT_ID);
   authUrl.searchParams.append('response_type', 'code');
-  authUrl.searchParams.append('redirect_uri', process.env.KROGER_REDIRECT_URI);
-  authUrl.searchParams.append('scope', 'product.compact');  // Adjust scopes as needed
+  // Force HTTP redirect URI for local development
+  authUrl.searchParams.append('redirect_uri', 
+    process.env.KROGER_REDIRECT_URI.replace('https://', 'http://'));
+  authUrl.searchParams.append('scope', 'product.compact');
   authUrl.searchParams.append('state', state);
   
   res.redirect(authUrl.toString());
