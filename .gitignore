@@ -1,0 +1,48 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+.env.kroger
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Logs
+logs
+*.log
+
+# Generated files
+coverage/
+.nyc_output
+.DS_Store
+
+# SSL certificates
+*.key
+*.cert
+*.pem
+
+# Security files that might contain sensitive information
+krogertoken
+
+# IDE settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build directories
+.next/
+out/
+build/
+dist/
